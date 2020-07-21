@@ -60,16 +60,16 @@ def detail(request, id):
         'comment_form' : comment_form
     }
 
-    return render(request, 'blog/blog_details.html', context)
+    return render(request, 'blog/detail.html', context)
 
 
 def category(request, category):
-    category = Post.objects.filter(category__category_name=category)
+    category = Post.objects.filter(category__name=category)
     context = {
         'list' : category ,
     }
 
-    return render(request , 'Post/blog.html' , context)
+    return render(request , 'blog/blog.html' , context)
 
 
 
@@ -79,4 +79,4 @@ def tag(request , tag):
         'list' : tag ,
     }
 
-    return render(request , 'Post/list.html' , context)
+    return render(request , 'blog/blog.html' , context)

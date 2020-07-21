@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+			<section class="ftco-section-2">
+				<div class="photograhy">
+					<div class="row no-gutters">
+						{% for x in home %}
+						<div class="col-md-4 ftco-animate">
+							<a href="{{ x.image.url }}" class="photography-entry img image-popup d-flex justify-content-center align-items-center img-fluid" style="background-image: url({{ x.image.url}});">
+								<div class="overlay"></div>
+								<div class="text text-center">
+									<h3>{{ x.title}}</h3>
+									{{tag}}
+								</div>
+							</a>
+						</div>
+						{% endfor %}
+						
+					</div>
+				</div>
+			</section>
+
+{% endblock body %}

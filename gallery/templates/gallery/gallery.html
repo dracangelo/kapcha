@@ -6,7 +6,7 @@
 				<div class="container">
 					<div class="row no-gutters slider-text align-items-center">
 	          <div class="col-md-9 ftco-animate">
-	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Gallery</span></p>
+	            <p class="breadcrumbs"><span class="mr-2"><a href="/">Home</a></span> <span>Gallery</span></p>
 	            <h1 class="mb-3 bread">Galleries</h1>
 	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
 	          </div>
@@ -22,13 +22,15 @@
 								<div class="overlay"></div>
 								<div class="text text-center">
 									<h3>{{ x.title}}</h3>
-									{% for tag in pic.tags.all %}  
-									<a href="{% url 'gallery:tag' tag %}" class="tag-cloud-link">{{tag.name}}</a>
-									{% endfor %}
+									{{tag}}
 								</div>
 							</a>
+							{% for tag in gallery.tags.all %}  
+							<a href="{% url 'blog:tag' tag %}" class="tag-cloud-link">{{tag}}</a>
+							{% endfor %}
 						</div>
 						{% endfor %}
+
 						
 					</div>
 				</div>

@@ -12,6 +12,7 @@ class Post(models.Model):
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)
     content = models.TextField()
     tags = TaggableManager(blank=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name = 'Post'
@@ -24,7 +25,7 @@ class Category(models.Model):
     name =  models.CharField(max_length=20)
 
     class Meta:
-        verbose_name = 'CAtegory'
+        verbose_name = 'Category'
         verbose_name_plural = 'Categories'
 
     def __str__(self):

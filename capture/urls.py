@@ -24,7 +24,10 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls', namespace='blog')),
-    path('gallery/', include('gallery.urls', namespace='gallery')),
+    path('gallery/', include('gallery.urls', namespace='gallery')),    
+    path('about/', include('about.urls', namespace='about')),
+    path('contacts/', include('contacts.urls', namespace='contacts')),
+    path('', include('home.urls', namespace='home')),
 
     
 ]
