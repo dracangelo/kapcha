@@ -61,12 +61,12 @@
 				<div class="comment-form-wrap pt-5">
 				  <h3 class="mb-5">Leave a comment</h3>
 				  <form method="POST" class="p-5 bg-light">
-					  {% csrf_token %}
-					  {% bootstrap_form comment_form %}
-					  {% buttons %}
-						  <button type="submit" class="btn btn-primary">Leave A Comment</button>
-					  {% endbuttons %}
-				  </form>
+					{% csrf_token %}
+					{% bootstrap_form comment_form %}
+					{% buttons %}
+						<button type="submit" class="btn btn-primary">Leave A Comment</button>
+					{% endbuttons %}
+				</form>
 				</div>
 			  </div>
 
@@ -74,19 +74,19 @@
 			<div class="col-md-4 sidebar">
 			  <div class="sidebar-box">
 				<form action="{% url 'blog:list' %}" method="GET" class="search-form">
-				  <div class="form-group">
-					<span class="icon fa fa-search"></span>
-					<input type="text" class="form-control" name='q' value="{{request.Get.q}}" placeholder="Type a keyword and hit enter">
-				  </div>
-				</form>
+                    <div class="form-group">
+                      <span class="icon fa fa-search"></span>
+                      <input type="text" class="form-control" name='q' value="{{request.Get.q}}" placeholder="Type a keyword and hit enter">
+                    </div>
+                  </form>
 			  </div>
 			  <div class="sidebar-box">
 				<div class="categories">
 				  <h3>Categories</h3>
 				  {% for category in categories %}                      
-				  <li><a href="{% url 'blog:category' category %}">{{category}}</a></li>
+                    <li><a href="{% url 'blog:category' category %}">{{category}}</a></li>
 
-				  {% endfor %}
+                  {% endfor %}}
 				</div>
 			  </div>
 
@@ -95,9 +95,9 @@
 				<h3>Tag Cloud</h3>
 				<div class="tagcloud">
 					
-					  {% for tag in all_tags %}
+					{% for tag in all_tags %}
 						<a href="{% url 'blog:tag' tag %}" class="tag-cloud-link">{{tag}}</a>
-					  {% endfor %}
+				  	{% endfor %}
 				</div>
 			  </div>
 

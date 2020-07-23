@@ -63,6 +63,8 @@ def detail(request, id):
     return render(request, 'blog/detail.html', context)
 
 
+
+
 def category(request, category):
     category = Post.objects.filter(category__name=category)
     context = {
@@ -80,3 +82,4 @@ def tag(request , tag):
     }
 
     return render(request , 'blog/blog.html' , context)
+
