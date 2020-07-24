@@ -10,9 +10,12 @@
 								<div class="overlay"></div>
 								<div class="text text-center">
 									<h3>{{ x.title}}</h3>
-									<p>{{x.tag}}</p>
+									<p>{{tag}}</p>
 								</div>
 							</a>
+							{% for tag in gallery.tags.all %}  
+							<a href="{% url 'blog:tag' tag %}" class="tag-cloud-link">{{tag}}</a>
+							{% endfor %}
 						</div>
 						{% endfor %}
 						
