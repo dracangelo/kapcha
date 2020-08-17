@@ -8,7 +8,7 @@
 						<div class="col-md-4 ftco-animate">
 							<a href="{{ x.image.url }}" class="photography-entry img image-popup d-flex justify-content-center align-items-center img-fluid" style="background-image: url({{ x.image.url}});">
 								<div class="overlay"></div>
-								<div class="text text-center">
+								<div clas	s="text text-center">
 									<h3>{{ x.title}}</h3>
 									<p>{{tag}}</p>
 								</div>
@@ -16,6 +16,19 @@
 							{% for tag in gallery.tags.all %}  
 							<a href="{% url 'blog:tag' tag %}" class="tag-cloud-link">{{tag}}</a>
 							{% endfor %}
+						</div>
+						{% endfor %}
+						{% for x in home %}
+						<div class="col-md-4 ftco-animate">
+							<a href="{{ x.image.url }}" class="photography-entry img image-popup d-flex justify-content-center align-items-center" style="background-image: url(images/image_1.jpg);">
+								<div class="overlay"></div>
+								<div class="text text-center">
+									<h3>{{ x.title}}</h3>
+									{% for tag in gallery.tags.all %}  
+									<a href="{% url 'blog:tag' tag %}" class="tag-cloud-link">{{tag}}</a>
+									{% endfor %}
+								</div>
+							</a>
 						</div>
 						{% endfor %}
 						
